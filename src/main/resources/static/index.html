@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblig 1</title>
+    <style>
+        .s {color: red; visibility: hidden;}
+    </style>
+
+</head>
+<body>
+    <h1>Bestilling av kinobilletter</h1>
+
+    <table>
+        <tr>
+            <td align="left">Velg film</td>
+            <td align="left">
+                <select id="film">
+                    <option value="" disabled selected>Velg film her</option>
+                    <option>Harry Potter 1</option>
+                    <option>Harry Potter 2</option>
+                    <option>Harry Potter 3</option>
+                </select>
+            </td>
+        <tr>
+            <td>Antall</td>
+            <td><input type="number" style="width: 30px;"></td>
+            <td class="s">Må skrive noe inn i antall!</td>
+        </tr>
+        <tr>
+            <td>Fornavn</td>
+            <td><input type="text" style="width: 125px;"></td>
+            <td class="s">Må skrive noe inn i fornavn!</td>
+        </tr>
+        <tr>
+            <td>Etternavn</td>
+            <td><input type="text" style="width: 125px;"></td>
+            <td class="s">Må skrive noe inn i etternavn!</td>
+        </tr>
+        <tr>
+            <td>Telefonnr</td>
+            <td><input type="text" style="width: 125px;"></td>
+            <td class="s">Må skrive noe inn i telefonnr!</td>
+        </tr>
+        <tr>
+            <td>Epost</td>
+            <td><input type="text" style="width: 125px;"></td>
+            <td class="s">Skriv inn en epost!</td>
+        </tr>
+    </table>
+
+    <button onclick="kjop()">Kjøp billett</button>
+
+    <h2>Alle billetter</h2>
+
+    <table id="visBilletter">
+        <tr style="font-size: 18px; font-weight: bold;">
+            <td>Film</td>
+            <td>Antall</td>
+            <td>Fornavn</td>
+            <td>Etternavn</td>
+            <td>Telefon</td>
+            <td>Epost</td>
+        </tr>
+    </table>
+
+    <button onclick="slett()">Slett alle</button>
+</body>
+
+<script src="script.js"></script>
+</html>
