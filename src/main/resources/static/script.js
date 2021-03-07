@@ -8,8 +8,11 @@
     if (!verifiser()) return
 
     const billett = {film:filmSelect.value, antall: inputs[0].value, fornavn: inputs[1].value, etternavn: inputs[2].value, telefon: inputs[3].value, epost: inputs[4].value }
-    billetter.push(billett)
 
+        $.post("/lagre", billett, function(){
+            hentAlle();
+        });
+    
     visKjop()
 
         // RESET
@@ -41,9 +44,9 @@
     // Fjerner billetter fra visbilett tabellen
     let i = visBilletter.children.length - 1
     while (visBilletter.children.length > 1) {
-    visBilletter.children[i].remove()
+        visBilletter.children[i].remove()
     i--
-}
+    }
 
     // Legger til billetter fra billett arrayet
     for (let i = 0; i < billetter.length; i++) {
@@ -61,4 +64,24 @@
     while (billetter.length > 0)
     billetter.pop()
     visKjop()
+
+        $.get( "/slettAlle", function() {
+            hentAlle();
+        });
 }
+
+////////////////////////////////////////////////
+
+    function hentAlle() {
+        $.get( "/hentAlle", function( data ) {
+            data.forEach(billett => {
+                console.log(billett)
+                billetter.push(billett)
+            });
+            visKjop();
+        });
+    }
+
+
+
+

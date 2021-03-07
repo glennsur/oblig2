@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oblig 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Oblig 2</title>
     <style>
         .s {color: red; visibility: hidden;}
     </style>
 
 </head>
-<body>
+<body onload="hentAlle()">
     <h1>Bestilling av kinobilletter</h1>
 
     <table>
@@ -23,31 +25,35 @@
                     <option>Harry Potter 3</option>
                 </select>
             </td>
+            <td class="s">Må velge film!</td>
         <tr>
             <td>Antall</td>
-            <td><input type="number" style="width: 30px;"></td>
+            <td><input type="number" style="width: 30px;" id="antallInput"></td>
             <td class="s">Må skrive noe inn i antall!</td>
         </tr>
         <tr>
             <td>Fornavn</td>
-            <td><input type="text" style="width: 125px;"></td>
+            <td><input type="text" style="width: 125px;" id="fornavnInput"></td>
             <td class="s">Må skrive noe inn i fornavn!</td>
         </tr>
         <tr>
             <td>Etternavn</td>
-            <td><input type="text" style="width: 125px;"></td>
+            <td><input type="text" style="width: 125px;" id="etternavnInput"></td>
             <td class="s">Må skrive noe inn i etternavn!</td>
         </tr>
         <tr>
-            <td>Telefonnr</td>
-            <td><input type="text" style="width: 125px;"></td>
-            <td class="s">Må skrive noe inn i telefonnr!</td>
-        </tr>
-        <tr>
             <td>Epost</td>
-            <td><input type="text" style="width: 125px;"></td>
+            <td><input type="text" style="width: 125px;" id="epostInput"></td>
             <td class="s">Skriv inn en epost!</td>
         </tr>
+        <tr>
+            <td>Telefonnr</td>
+            <td><input type="text" style="width: 125px;" id="telefonInput"></td>
+            <td class="s">Må skrive noe inn i telefonnr!</td>
+        </tr>
+
+
+
     </table>
 
     <button onclick="kjop()">Kjøp billett</button>
