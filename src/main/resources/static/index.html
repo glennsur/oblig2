@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <title>Oblig 2</title>
     <style>
         .s {color: red; visibility: hidden;}
@@ -14,7 +15,7 @@
 <body onload="hentAlle()">
     <h1>Bestilling av kinobilletter</h1>
 
-    <table>
+    <table class="table">
         <tr>
             <td align="left">Velg film</td>
             <td align="left">
@@ -28,7 +29,7 @@
             <td class="s">Må velge film!</td>
         <tr>
             <td>Antall</td>
-            <td><input type="number" style="width: 30px;" id="antallInput"></td>
+            <td><input type="number" style="width: 50px;" id="antallInput"></td>
             <td class="s">Må skrive noe inn i antall!</td>
         </tr>
         <tr>
@@ -51,16 +52,13 @@
             <td><input type="text" style="width: 125px;" id="telefonInput"></td>
             <td class="s">Må skrive noe inn i telefonnr!</td>
         </tr>
-
-
-
     </table>
 
-    <button onclick="kjop()">Kjøp billett</button>
+    <button onclick="kjop()" class="btn btn-primary">Kjøp billett</button>
 
     <h2>Alle billetter</h2>
 
-    <table id="visBilletter">
+    <table id="visBilletter" class="table">
         <tr style="font-size: 18px; font-weight: bold;">
             <td>Film</td>
             <td>Antall</td>
@@ -71,7 +69,7 @@
         </tr>
     </table>
 
-    <button onclick="slett()">Slett alle</button>
+    <button onclick="slett()" class="btn btn-danger">Slett alle</button>
 </body>
 
 <script src="script.js"></script>

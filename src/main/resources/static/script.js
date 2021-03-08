@@ -12,7 +12,7 @@
         $.post("/lagre", billett, function(){
             hentAlle();
         });
-    
+
     visKjop()
 
         // RESET
@@ -40,8 +40,8 @@
         return gyldig
 }
 
-    function visKjop() {
     // Fjerner billetter fra visbilett tabellen
+    function visKjop() {
     let i = visBilletter.children.length - 1
     while (visBilletter.children.length > 1) {
         visBilletter.children[i].remove()
