@@ -1,7 +1,6 @@
     const filmSelect = document.getElementById("film");
     const inputs = document.getElementsByTagName("input")
     const visBilletter = document.getElementById("visBilletter")
-    //const billetter = []
 
     // Håndterer klikk på kjøp knappen
     function kjop() {
@@ -12,7 +11,6 @@
         $.post("/lagre", billett, function(){
             hentAlle();
         });
-
 
         // RESET
         filmSelect.value="";
@@ -26,14 +24,14 @@
     // Sjekker at inputet er gyldig
     function verifiser() {
     let gyldig = true
-    for (const element of inputs) {
-        const tr = element.parentNode.parentNode
+    for (const element of document.getElementsByClassName("inputInfo")) {
+        const div = element.parentNode
             if (element.value == "") {
-                tr.children[2].style.visibility = "visible"
+                div.children[2].style.display = "block"
                 gyldig = false
             }
         else {
-            tr.children[2].style.visibility = "hidden"
+            div.children[2].style.display = "none"
         }
     }
         return gyldig
@@ -50,7 +48,6 @@
     // Legger til billetter fra billett arrayet
     for (let i = 0; i < billetter.length; i++) {
         const tr = document.createElement("tr")
-        //tr.classList.add("table");
         $(tr).addClass('table')
             for (const nokkel in billetter[i]) {
                 const td = document.createElement("td")
@@ -60,15 +57,13 @@
         visBilletter.appendChild(tr)
     }
 }
-    // Sletter billetter fra billett-arrayet
+    // Sletter billetter
     function slett() {
         $.get( "/slettAlle", function() {
             hentAlle();
         });
 }
-
-////////////////////////////////////////////////
-
+    // Henter billetter
     function hentAlle() {
         $.get( "/hentAlle", function( billetter ) {
             visKjop(billetter);

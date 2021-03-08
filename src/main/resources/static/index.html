@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oblig 2</title>
     <style>
-        .s {color: red; visibility: hidden;}
+        .s {color: red; display: none;}
     </style>
 
 </head>
@@ -17,45 +17,43 @@
     <div class="row">
         <div class="col-md-4">
             <h1>Bestilling av kinobilletter</h1>
-            <table class="table">
-                <tr>
-                    <td><label for="film">Velg film</label></td>
-                    <td>
-                        <select id="film">
+            <form class="form">
+                <div class="form-group">
+                    <label for="film">Velg film</label>
+                        <select id="film" class="form-control inputInfo">
                             <option value="" disabled selected>Velg film her</option>
                             <option>Harry Potter 1</option>
                             <option>Harry Potter 2</option>
                             <option>Harry Potter 3</option>
                         </select>
-                    </td>
-                    <td class="s">Må velge film!</td>
-                <tr>
-                    <td><label for="antallInput">Antall</label></td>
-                    <td><input type="number" style="width: 50px;" id="antallInput"></td>
-                    <td class="s">Må skrive noe inn i antall!</td>
-                </tr>
-
-                <tr>
-                    <td><label for="fornavnInput">Fornavn</label></td>
-                    <td><input type="text" style="width: 125px;" id="fornavnInput"></td>
-                    <td class="s">Må skrive noe inn i fornavn!</td>
-                </tr>
-                <tr>
-                    <td><label for="etternavnInput">Etternavn</label></td>
-                    <td><input type="text" style="width: 125px;" id="etternavnInput"></td>
-                    <td class="s">Må skrive noe inn i etternavn!</td>
-                </tr>
-                <tr>
-                    <td><label for="epostInput">Epost</label></td>
-                    <td><input type="text" style="width: 125px;" id="epostInput"></td>
-                    <td class="s">Skriv inn en epost!</td>
-                </tr>
-                <tr>
-                    <td><label for="telefonInput">Telefonnr</label></td>
-                    <td><input type="text" style="width: 125px;" id="telefonInput"></td>
-                    <td class="s">Må skrive noe inn i telefonnr!</td>
-                </tr>
-            </table>
+                    <div class="s">Må velge film!</div>
+                </div>
+                <div class="form-group">
+                    <label for="antallInput">Antall</label></td>
+                    <input type="number" style="width: 75px;" id="antallInput" class="form-control inputInfo">
+                    <div class="s">Må skrive noe inn i antall!</div>
+                </div>
+                <div class="form-group">
+                    <label for="fornavnInput">Fornavn</label>
+                    <input type="text" id="fornavnInput" class="form-control inputInfo">
+                    <div class="s">Må skrive noe inn i fornavn!</div>
+                </div>
+                <div class="form-group">
+                    <label for="etternavnInput">Etternavn</label>
+                    <input type="text" id="etternavnInput" class="form-control inputInfo">
+                    <div class="s">Må skrive noe inn i etternavn!</div>
+                </div>
+                <div class="form-group">
+                    <label for="epostInput">Epost</label>
+                    <input type="text" id="epostInput" class="form-control inputInfo">
+                    <div class="s">Skriv inn en epost!</div>
+                </div>
+                <div class="form-group">
+                    <label for="telefonInput">Telefonnr</label>
+                    <input type="text" id="telefonInput" class="form-control inputInfo">
+                    <div class="s">Må skrive noe inn i telefonnr!</div>
+                </div>
+            </form>
 
             <button onclick="kjop()" class="btn btn-primary">Kjøp billett</button>
 
@@ -64,14 +62,14 @@
             <h2>Alle billetter</h2>
 
             <table class="table table-striped">
-                <thead class="thead-dark">
-                <tr style="font-size: 18px; font-weight: bold;">
-                    <td>Film</td>
-                    <td>Antall</td>
-                    <td>Fornavn</td>
-                    <td>Etternavn</td>
-                    <td>Telefon</td>
-                    <td>Epost</td>
+                <thead>
+                <tr style="font-size: 18px; font-weight: bold;" >
+                    <th>Film</th>
+                    <th>Antall</th>
+                    <th>Fornavn</th>
+                    <th>Etternavn</th>
+                    <th>Telefon</th>
+                    <th>Epost</th>
                 </tr>
                 </thead>
                 <tbody id="visBilletter">
