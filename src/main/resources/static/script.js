@@ -67,7 +67,6 @@
     function hentAlle() {
         $.get( "/hentAlle", function( billetter ) {
             visKjop(billetter);
-            console.log(billetter)
         });
     }
 
